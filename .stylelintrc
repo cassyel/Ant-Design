@@ -7,6 +7,7 @@
     "stylelint-order"
   ],
   "rules": {
+    "order/properties-alphabetical-order": true,
     "color-named": "never",
     "declaration-block-no-duplicate-properties": true
   }

@@ -3764,6 +3764,13 @@ styled-components@^5.3.9:
     shallowequal "^1.1.0"
     supports-color "^5.5.0"
 
+stylelint-config-recess-order@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-recess-order/-/stylelint-config-recess-order-4.0.0.tgz#819b4b8f9bf83d23a0bc918a9bf834f42f87b12a"
+  integrity sha512-sOb+OofMryBR91CbzgV2FavpONqiIeAE7cfrgyUHqePblWBKsYzoUuWThI5EjPRA7KKeovm6ykr7twWYLeafPQ==
+  dependencies:
+    stylelint-order "6.x"
+
 stylelint-config-recommended@^11.0.0:
   version "11.0.0"
   resolved "https://registry.npmjs.org/stylelint-config-recommended/-/stylelint-config-recommended-11.0.0.tgz"
@@ -3781,7 +3788,7 @@ stylelint-config-styled-components@^0.1.1:
   resolved "https://registry.npmjs.org/stylelint-config-styled-components/-/stylelint-config-styled-components-0.1.1.tgz"
   integrity sha512-z5Xz/9GmvxO6e/DLzBMwkB85zHxEEjN6K7Cj80Bi+o/9vR9eS3GX3E9VuMnX9WLFYulqbqLtTapGGY28JBiy9Q==
 
-stylelint-order@^6.0.3:
+stylelint-order@6.x, stylelint-order@^6.0.3:
   version "6.0.3"
   resolved "https://registry.npmjs.org/stylelint-order/-/stylelint-order-6.0.3.tgz"
   integrity sha512-1j1lOb4EU/6w49qZeT2SQVJXm0Ht+Qnq9GMfUa3pMwoyojIWfuA+JUDmoR97Bht1RLn4ei0xtLGy87M7d29B1w==
