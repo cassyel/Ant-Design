@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "customSyntax": "postcss-styled-syntax",
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "color-named": "never",
+    "declaration-block-no-duplicate-properties": true
+  }
+}
