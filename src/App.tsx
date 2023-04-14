@@ -10,10 +10,10 @@ export default function Appt() {
 
       <GlobalStyle />
 
-      <AppContainer style={{ height: '100vh', width: '100vw' }}>
+      <AppContainer className='AppContainer'>
         <Header />
 
-        <Space>
+        <Space className='SpaceContainer'>
           <SideMenu></SideMenu>
           <Content></Content>
         </Space>
