@@ -1,3 +1,5 @@
 import styled from 'styled-components';
 
-export const SideMenuContainer = styled.main``;
+export const PageContent = styled.main`
+  padding-left: 12px;
+`;

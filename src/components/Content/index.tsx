@@ -1,7 +1,10 @@
-import { SideMenuContainer } from './styles';
+import AppRoutes from '../Routes';
+import { PageContent } from './styles';
 
 export default function Content() {
   return (
-    <SideMenuContainer>Content</SideMenuContainer>
+    <PageContent>
+      <AppRoutes />
+    </PageContent>
   );
 }

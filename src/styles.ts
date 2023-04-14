@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     .SpaceContainer {
       display: flex;
       flex: 1;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
   }
 
