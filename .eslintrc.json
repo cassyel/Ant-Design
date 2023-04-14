@@ -17,7 +17,7 @@
       "ignoreUrls": true,
       "ignoreStrings": true,
       "ignoreTemplateLiterals": true
-    }],
+    }, 80],
     "object-curly-spacing": ["error", "always"],
     "array-bracket-spacing": ["error", "always"],
     "computed-property-spacing": ["error", "always"],
