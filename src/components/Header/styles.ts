@@ -9,8 +9,8 @@ export const HeaderContainer = styled.header`
   padding: 4px 20px 4px 12px;
 
   .icon {
-    font-size: 24px;
     cursor: pointer;
+    font-size: 24px;
 
     &:hover {
       transform: scale(1.2);

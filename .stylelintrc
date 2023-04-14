@@ -10,6 +10,7 @@
     "color-function-notation": "legacy",
     "order/properties-alphabetical-order": true,
     "color-named": "never",
-    "declaration-block-no-duplicate-properties": true
+    "declaration-block-no-duplicate-properties": true,
+    "selector-class-pattern": null
   }
 }
