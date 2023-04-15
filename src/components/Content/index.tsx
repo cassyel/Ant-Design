@@ -1,10 +1,10 @@
 import AppRoutes from '../Routes';
-import { PageContent } from './styles';
+import { PageContentContainer } from './styles';
 
 export default function Content() {
   return (
-    <PageContent>
+    <PageContentContainer>
       <AppRoutes />
-    </PageContent>
+    </PageContentContainer>
   );
 }

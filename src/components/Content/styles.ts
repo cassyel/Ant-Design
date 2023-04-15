@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const PageContent = styled.main`
+export const PageContentContainer = styled.main`
   padding-left: 12px;
 `;
