@@ -4,7 +4,7 @@ import { GlobalStyle } from './styles';
 
 import { App as AppContainer, Space } from 'antd';
 
-export default function Appt() {
+export default function App() {
   return (
     <Fragment>
 
@@ -14,8 +14,8 @@ export default function Appt() {
         <Header />
 
         <Space className='SpaceContainer'>
-          <SideMenu></SideMenu>
-          <Content></Content>
+          <SideMenu />
+          <Content />
         </Space>
 
         <Footer></Footer>
