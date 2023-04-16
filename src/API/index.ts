@@ -4,6 +4,11 @@ export async function getOrders() {
     .then(res => res.json());
 }
 
+
+export const getCustomers = () => {
+  return fetch('https://dummyjson.com/users').then((res) => res.json());
+};
+
 export function formatCurrency(value: number) {
   return new Intl.NumberFormat('pt-br', {
     style: 'currency',

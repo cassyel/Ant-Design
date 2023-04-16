@@ -1,4 +1,4 @@
-import { Avatar, Rate, Space, Table, Typography } from 'antd';
+import { Avatar, Modal, Rate, Space, Table, Typography } from 'antd';
 import { useEffect, useState } from 'react';
 import { formatCurrency, getOrders } from '../../API';
 
@@ -20,7 +20,7 @@ export default function Inventory() {
   return (
     <Space size={20} direction='vertical'>
 
-      <Typography.Title level={4}>Inventory</Typography.Title>
+      <Typography.Title level={4}>Inventário</Typography.Title>
 
       <Table
         columns={[

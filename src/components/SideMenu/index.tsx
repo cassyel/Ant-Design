@@ -5,7 +5,6 @@ import { Menu } from 'antd';
 import {
   ControlOutlined,
   ShopOutlined,
-  ShoppingCartOutlined,
   UsergroupAddOutlined,
 } from '@ant-design/icons';
 
@@ -30,11 +29,6 @@ export default function SideMenu() {
             label: 'Inventário',
             icon: <ShopOutlined />,
             key: '/inventario'
-          },
-          {
-            label: 'Pedidos',
-            icon: <ShoppingCartOutlined />,
-            key: '/pedidos'
           },
           {
             label: 'Clientes',

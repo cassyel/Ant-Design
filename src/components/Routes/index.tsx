@@ -4,7 +4,6 @@ import {
   Customers,
   Dashboard,
   Inventory,
-  Orders,
 } from '../../pages';
 
 export default function AppRoutes() {
@@ -12,7 +11,6 @@ export default function AppRoutes() {
     <Routes>
       <Route path='/' element={<Dashboard />}></Route>
       <Route path='/inventario' element={<Inventory />}></Route>
-      <Route path='/pedidos' element={<Orders />}></Route>
       <Route path='/clientes' element={<Customers />}></Route>
     </Routes>
   );

@@ -6,20 +6,19 @@ export const GlobalStyle = createGlobalStyle`
     border: 0;
     margin: 0;
     padding: 0;
-    /* background-color: #333; */
   }
 
   .AppContainer {
-    height: 100vh;
-    width: 100vw;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    width: 100vw;
 
     .SpaceContainer {
+      align-items: flex-start;
       display: flex;
       flex: 1;
       justify-content: flex-start;
-      align-items: flex-start;
     }
   }
 
