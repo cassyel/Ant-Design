@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     border: 0;
     margin: 0;
     padding: 0;
+    /* background-color: #333; */
   }
 
   .AppContainer {

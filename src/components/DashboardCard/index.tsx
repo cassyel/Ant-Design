@@ -10,7 +10,7 @@ type iconProps = {
 
 interface IDashboardCardProps {
   title: string;
-  value: number;
+  value: number | string;
   iconProps: iconProps
 }
 

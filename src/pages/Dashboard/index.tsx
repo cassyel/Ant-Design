@@ -1,6 +1,6 @@
-import { Space, Typography } from 'antd';
+import { Space, Table, Typography } from 'antd';
 
-import { DashboardContainer } from './styles';
+import { RecentOrdersContainer } from './styles';
 import { DashboardCard } from '../../components';
 
 import {
@@ -10,16 +10,72 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 
+import { useEffect, useState } from 'react';
+import { formatCurrency, getOrders } from '../../API';
 
+interface IRecentOrdersProps {
+  dataSource: any;
+  loading: boolean
+}
+
+function RecentOrders({ dataSource, loading }: IRecentOrdersProps) {
+  return (
+    <RecentOrdersContainer>
+      <Typography.Text>Mais vendidos</Typography.Text>
+      <Table
+        columns={[
+          {
+            title: 'Item',
+            dataIndex: 'title',
+            width: 480
+          },
+          {
+            title: 'Itens Vendido',
+            dataIndex: 'sold_quantity',
+            defaultSortOrder: 'ascend',
+            sorter: (record1, record2) => {
+              return record1.sold_quantity - record2.sold_quantity;
+            },
+          },
+          {
+            title: 'Valor',
+            dataIndex: 'price',
+            render: (value) => <span>{formatCurrency(value)} p/unidade</span>,
+            width: 100
+          },
+        ]}
+        loading={loading}
+        dataSource={dataSource}
+        pagination={{ position: [ 'bottomCenter' ], pageSize: 4 }}
+        bordered
+      />
+    </RecentOrdersContainer>
+  );
+}
 
 export default function Dashboard() {
+  const [ dataSource, setDataSource ] = useState<any>([]);
+  const [ loading, setLoading ] = useState(true);
+
+  useEffect(() => {
+    getOrders().then((response) => {
+      setDataSource(response.results);
+      setLoading(false);
+    });
+  }, []);
+
   return (
-    <DashboardContainer>
+    <Space size={20} direction='vertical'>
+
       <Typography.Title level={4}>Dashboard</Typography.Title>
+
       <Space direction='horizontal'>
         <DashboardCard
-          title='Orders'
-          value={1234}
+          title='Pedidos'
+          value={dataSource
+            .reduce((acc: number, object: {sold_quantity: number}) => {
+              return acc + object.sold_quantity;
+            }, 0)}
           iconProps={{
             icon: <ShoppingCartOutlined />,
             background: 'rgba(0, 255, 0, 0.25)',
@@ -27,8 +83,11 @@ export default function Dashboard() {
           }}
         />
         <DashboardCard
-          title='Inventory'
-          value={1234}
+          title='Inventário'
+          value={dataSource
+            .reduce((acc: number, object: {available_quantity: number}) => {
+              return acc + object.available_quantity;
+            }, 0)}
           iconProps={{
             icon: <ShoppingOutlined />,
             background: 'rgba(0,0, 255, 0.25)',
@@ -36,8 +95,8 @@ export default function Dashboard() {
           }}
         />
         <DashboardCard
-          title='Customer'
-          value={1234}
+          title='Clientes'
+          value={30}
           iconProps={{
             icon: <UserOutlined />,
             background: 'rgba(0, 255, 255, 0.25)',
@@ -45,8 +104,11 @@ export default function Dashboard() {
           }}
         />
         <DashboardCard
-          title='Revenue'
-          value={1234}
+          title='Faturamento'
+          value={formatCurrency(dataSource
+            .reduce((acc: number, obj: { price: number }) => {
+              return acc +  obj.price + (obj.price * 0.8);
+            }, 0))}
           iconProps={{
             icon: <DollarCircleOutlined />,
             background: 'rgba(255, 0, 0, 0.25)',
@@ -54,6 +116,11 @@ export default function Dashboard() {
           }}
         />
       </Space>
-    </DashboardContainer>
+
+      <Space>
+        <RecentOrders dataSource={dataSource} loading={loading}  />
+      </Space>
+
+    </Space>
   );
 }
