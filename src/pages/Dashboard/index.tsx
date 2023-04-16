@@ -14,8 +14,12 @@ import { useEffect, useState } from 'react';
 import { formatCurrency, getOrders } from '../../API';
 
 interface IRecentOrdersProps {
-  dataSource: any;
+  dataSource: [];
   loading: boolean
+}
+
+export type Sold = {
+  sold_quantity: number;
 }
 
 function RecentOrders({ dataSource, loading }: IRecentOrdersProps) {
@@ -27,13 +31,13 @@ function RecentOrders({ dataSource, loading }: IRecentOrdersProps) {
           {
             title: 'Item',
             dataIndex: 'title',
-            width: 480
+            width: 505
           },
           {
             title: 'Itens Vendido',
             dataIndex: 'sold_quantity',
-            defaultSortOrder: 'ascend',
-            sorter: (record1, record2) => {
+            defaultSortOrder: 'descend',
+            sorter: (record1: Sold, record2: Sold) => {
               return record1.sold_quantity - record2.sold_quantity;
             },
           },
@@ -46,7 +50,7 @@ function RecentOrders({ dataSource, loading }: IRecentOrdersProps) {
         ]}
         loading={loading}
         dataSource={dataSource}
-        pagination={{ position: [ 'bottomCenter' ], pageSize: 4 }}
+        pagination={{ position: [ 'bottomCenter' ], pageSize: 2 }}
         bordered
       />
     </RecentOrdersContainer>
@@ -54,7 +58,7 @@ function RecentOrders({ dataSource, loading }: IRecentOrdersProps) {
 }
 
 export default function Dashboard() {
-  const [ dataSource, setDataSource ] = useState<any>([]);
+  const [ dataSource, setDataSource ] = useState<[]>([]);
   const [ loading, setLoading ] = useState(true);
 
   useEffect(() => {
@@ -107,7 +111,7 @@ export default function Dashboard() {
           title='Faturamento'
           value={formatCurrency(dataSource
             .reduce((acc: number, obj: { price: number }) => {
-              return acc +  obj.price + (obj.price * 0.8);
+              return acc +  obj.price * 20;
             }, 0))}
           iconProps={{
             icon: <DollarCircleOutlined />,

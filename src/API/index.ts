@@ -1,6 +1,6 @@
 export async function getOrders() {
   return await fetch(
-    'https://api.mercadolibre.com/sites/MLB/search?category=MLB114675&limit=10')
+    'https://api.mercadolibre.com/sites/MLB/search?category=MLB114675&limit=15')
     .then(res => res.json());
 }
 
